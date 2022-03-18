@@ -8,3 +8,5 @@
   <li>Bootstrap</li>
   <li>PokeAPI</li>
 </ul>
+
+Site ainda em desenvolvimento <a href="https://ronaldo3030.github.io/pokemon-with-pokeapi/" target="_blank">Link do site</a> 🚧💻
