@@ -1,0 +1,96 @@
+body{
+    background-color: #F8F9FA;
+    transition: all .4s ease-in-out;
+}
+.image-pokemon{
+    width: auto;
+    height: 15rem;
+}
+.card{
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+.img-pokemon{
+    transition: transform .3s ease-in-out;
+}
+.img-pokemon:hover{
+    transform: scale(1.1);
+}
+.backgroundModal{
+    background-color: rgba(52,52,52,0.7);
+    height: 100vh;
+}
+.fa-heart{
+    color: #dc3545;
+}
+.fa-shield-alt{
+    color: #adb5bd;
+}
+.fa-shoe-prints{
+    color: #0d6efd;
+}
+.fa-fist-raised{
+    color: #fd7e14;
+}
+
+.btn-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.container-modal{
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.mostra-modal{
+    animation: mostraModal .3s ease-in-out;
+}
+.remove-modal{
+    animation: fechaModal .3s ease-in-out;
+}
+
+.container-slide-poke{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+.btn-ball{
+    display: inline-block;
+    border: none;
+    border-radius: 100%;
+    background-color: rgba(51,51,51,0);
+    color: rgb(220,220,220);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter .2s ease-in-out, transform .2s ease-in-out;
+}
+.btn-ball i{
+    font-size: 3rem;
+    padding: 1rem;
+}
+.btn-ball i:hover{
+    filter: brightness(500);
+    transform: scale(1.05);
+}
+
+@keyframes mostraModal {
+    0%{
+        transform: translateY(-10rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+@keyframes fechaModal {
+    0%{
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-10rem);
+        opacity: 0;
+    }
+}
+
