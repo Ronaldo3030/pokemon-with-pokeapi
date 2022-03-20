@@ -8,11 +8,10 @@ const txtPokemonHTML = document.getElementById('pokemon-texto')
 const typePokemonHTML = document.getElementById('pokemon-tipo')
 
 let image = document.createElement(`img`)
-
 let idPokemon
 
 function poke() {
-    newUrl = url.concat(inputPokemon.value)
+    newUrl = url.concat((inputPokemon.value).toLowerCase())
     fetch(newUrl)
         .then(function (response) {
             return response.json()
@@ -119,6 +118,10 @@ function translateTypes(type) {
         case 'fairy':
             corDeFundo.style.backgroundColor = bgColors.Fada
             return 'Fada'
+            break;
+        case 'ice':
+            corDeFundo.style.backgroundColor = bgColors.Gelo
+            return 'Gelo'
             break;
     }
 }
