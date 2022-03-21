@@ -6,7 +6,7 @@
   <li>CSS</li>
   <li>JavaScript</li>
   <li>Bootstrap</li>
-  <li>PokeAPI</li>
+    <li><a href="https://pokeapi.co/" target="_blank">Poke Api</a></li>
 </ul>
 
 Site ainda em desenvolvimento <a href="https://ronaldo3030.github.io/pokemon-with-pokeapi/" target="_blank">Link do site</a> 🚧💻
