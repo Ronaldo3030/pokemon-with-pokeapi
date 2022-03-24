@@ -11,12 +11,13 @@ Mencione as ferramentas que você usou para criar seu projeto
 * [BOOTSTRAP](https://www.alura.com.br/artigos/bootstrap) - Framework front-end que fornece estruturas de CSS para a criação de sites e aplicações responsivas de forma rápida e simples.
 * [POKEAPI](https://pokeapi.co/docs/v2) - Documentação da Api utilizada no projeto.
 
+## 💻 Site
+Para testar ou ver como está ficando acesse [Pokemon](https://ronaldo3030.github.io/pokemon-with-pokeapi//)
+
 ## ✒️ Autores
 
 * **Eu** - *Trabalho Inicial* - [Ronaldo Maciel](https://github.com/Ronaldo3030/)
 
 ## 📄 Licença
 
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
-
-Site: <a href="https://ronaldo3030.github.io/pokemon-with-pokeapi/" target="_blank">Link do site</a>
+Este projeto está sob a licença (MIT) - veja o arquivo [LICENSE.md](https://github.com/Ronaldo3030/pokemon-with-pokeapi/blob/main/LICENSE) para detalhes.
