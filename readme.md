@@ -8,9 +8,9 @@ Um dos projetos que estou utilizando para estudar mais sobre Bootstrap e requisi
 
 Mencione as ferramentas que você usou para criar seu projeto
 
-* [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) - Linguagem de Marcação de Hipertexto
-* [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) - Linguagem de estilo
-* [JAVASCRIPT](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Linguagem leve, interpretada e baseada em objetos
+* [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) - Linguagem de Marcação de Hipertexto.
+* [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) - Linguagem de estilo.
+* [JAVASCRIPT](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Linguagem leve, interpretada e baseada em objetos.
 * [BOOTSTRAP](https://www.alura.com.br/artigos/bootstrap) - Framework front-end que fornece estruturas de CSS para a criação de sites e aplicações responsivas de forma rápida e simples.
 * [POKEAPI](https://pokeapi.co/docs/v2) - Documentação da Api utilizada no projeto.
 
