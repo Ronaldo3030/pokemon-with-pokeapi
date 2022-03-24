@@ -1,5 +1,6 @@
 # Pokemon
-Um dos projetos que estou utilizando para estudar mais sobre Bootstrap e requisições de API's com JS vanilla.
+Um dos projetos que estou utilizando para estudar mais sobre Bootstrap e requisições de API's com JS vanilla.<br>
+
 :construction: Projeto em construção :construction:
 ## 🛠️ Construído com
 
