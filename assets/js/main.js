@@ -35,7 +35,44 @@ function poke() {
                 typePokemon = translateTypes(typePokemon.type.name)
                 typesPokemon.push(typePokemon)
             }
-            typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>`+ typesPokemon
+            typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>` + typesPokemon
+
+            // IMAGEM DO POKEMON
+            image.setAttribute(`src`, data.sprites.other["official-artwork"].front_default)
+            image.setAttribute(`class`, 'image-pokemon')
+            image.setAttribute(`alt`, namePokemon)
+            imagePokemon.appendChild(image)
+        }).catch(function (err) {
+            document.getElementById('alert-pokemon').classList.remove('d-none')
+        })
+}
+
+function pokeSearch(pokemon) {
+    newUrl = url.concat(pokemon)
+    fetch(newUrl)
+        .then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            console.log(data)
+            document.querySelector('.alert-pokemon').classList.add('d-none')
+
+            // NOME DO POKEMON
+            let namePokemon = firstUpper(data.name)
+            namePokemonHTML.innerText = namePokemon
+
+            idPokemon = data.id
+            // NUMERO DO POKEMON
+            let numPokemon = idPokemon
+            numPokemonHTML.innerText = 'Nº: ' + numPokemon
+
+            // TIPO DO POKEMON
+            let typesPokemon = []
+            let arrTypesPokemon = data.types
+            for (let typePokemon of arrTypesPokemon) {
+                typePokemon = translateTypes(typePokemon.type.name)
+                typesPokemon.push(typePokemon)
+            }
+            typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>` + typesPokemon
 
             // IMAGEM DO POKEMON
             image.setAttribute(`src`, data.sprites.other["official-artwork"].front_default)
@@ -129,6 +166,9 @@ function translateTypes(type) {
 function firstUpper(str) {
     return str[0].toUpperCase() + str.substr(1)
 }
+function firstLower(str) {
+    return str[0].toLowerCase() + str.substr(1)
+}
 
 let hpPokemon = document.getElementById('hp')
 let forcaPokemon = document.getElementById('forca')
@@ -137,7 +177,7 @@ let velocidadePokemon = document.getElementById('velocidade')
 let pokemonNomeModal = document.querySelector('.pokemon-nome')
 let imagePokemonModal = document.querySelector('.image-pokemon-modal')
 
-function verStatus(){
+function verStatus() {
     document.querySelector('.backgroundModal').classList.remove('d-none')
     document.querySelector('.container-modal').classList.add('mostra-modal')
     document.querySelector('.container-modal').classList.remove('remove-modal')
@@ -161,7 +201,7 @@ function verStatus(){
 
             let defesa = data.stats[2].base_stat
             defesaPokemon.innerText = 'Defesa: ' + defesa
-            
+
             let velocidade = data.stats[5].base_stat
             velocidadePokemon.innerText = 'Velocidade: ' + velocidade
 
@@ -172,7 +212,7 @@ function verStatus(){
             document.getElementById('alert-pokemon').classList.remove('d-none')
         })
 }
-function fechaModal(){
+function fechaModal() {
     document.querySelector('.container-modal').classList.add('remove-modal')
     setTimeout(() => {
         document.querySelector('.backgroundModal').classList.add('d-none')
@@ -180,7 +220,7 @@ function fechaModal(){
     }, 250)
 }
 
-fetch(url+'1')
+fetch(url + '1')
     .then(function (response) {
         return response.json()
     }).then(function (data) {
@@ -200,7 +240,7 @@ fetch(url+'1')
             typePokemon = translateTypes(typePokemon.type.name)
             typesPokemon.push(typePokemon)
         }
-        typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>`+ typesPokemon
+        typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>` + typesPokemon
 
         // IMAGEM DO POKEMON
         image.setAttribute(`src`, data.sprites.other["official-artwork"].front_default)
@@ -210,6 +250,94 @@ fetch(url+'1')
     }).catch(function (err) {
         console.log(err)
     })
+
+
+    
+function verificador(){
+    if(inputPokemon.value == ""){
+        resultadoBusca.classList.remove('mostra-busca')
+    }
+}
+
+window.onload = () => {
+    setInterval(verificador, 500)
+}
+
+let resultadoBusca = document.getElementById('resultado-busca')
+let urlPoke = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=6000'
+
+// AJUSTA CAMPO DE PESQUISA AO DIGITAR
+function nameParecido() {
+    let filhosResultadoBusca = document.querySelectorAll('#resultado-busca > *')
+    if (filhosResultadoBusca.length > 0)
+        resultadoBusca.classList.add('mostra-busca')
+
+    filhosResultadoBusca.forEach(result => {
+        result.remove()
+    })
+    fetch(urlPoke)
+        .then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            data.results.forEach(result => {
+                if (result.name.startsWith((inputPokemon.value).toLowerCase())) {
+                    let li = document.createElement('li')
+                    li.setAttribute('class', "li-pokemon")
+                    li.setAttribute('id', result.name)
+                    let txt = document.createTextNode(firstUpper(result.name))
+
+                    li.appendChild(txt)
+                    resultadoBusca.appendChild(li)
+                }
+            })
+        }).catch(function (err) {
+            console.log(err)
+        })
+}
+
+// VERIFICA CLIQUE NA PÁGINA
+document.querySelector('body').addEventListener('click', (e) => {
+
+    // QUANDO A PESSOA CLICAR NO POKEMON QUE APARECE NA BUSCA
+    if(e.target.classList.value == 'li-pokemon'){
+        pokeSearch(e.target.id)
+        resultadoBusca.classList.remove('mostra-busca')
+        inputPokemon.value = ''
+    }
+})
+
+// AJUSTA CAMPO DE PESQUISA AO APAGAR
+document.querySelector('body').addEventListener('keydown', (e) => {
+    if (e.keyCode == 8) {            
+        let filhosResultadoBusca = document.querySelectorAll('#resultado-busca > *')
+
+        if (filhosResultadoBusca.length > 0)
+            resultadoBusca.classList.remove('d-none')
+
+        filhosResultadoBusca.forEach(result => {
+            result.remove()
+        })
+        fetch(urlPoke)
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data.results)
+                data.results.forEach(result => {
+                    if (result.name.startsWith(inputPokemon.value)) {
+                        let li = document.createElement('li')
+                        li.setAttribute('class', "li-pokemon")
+                        let txt = document.createTextNode(firstUpper(result.name))
+
+                        li.appendChild(txt)
+                        resultadoBusca.appendChild(li)
+                    }
+                })
+            }).catch(function (err) {
+                console.log(err)
+            })
+    }
+})
+
 
 
 const bgColors = {
@@ -233,12 +361,12 @@ const bgColors = {
     'Agua': '#1552E2',
 }
 
-function nextPoke(){
+function nextPoke() {
     idPokemon++
-    if(idPokemon > 898){
+    if (idPokemon > 898) {
         idPokemon = 1
     }
-    if(idPokemon < 1){
+    if (idPokemon < 1) {
         idPokemon = 898
     }
     newUrl = url.concat(idPokemon)
@@ -265,7 +393,7 @@ function nextPoke(){
                 typePokemon = translateTypes(typePokemon.type.name)
                 typesPokemon.push(typePokemon)
             }
-            typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>`+ typesPokemon
+            typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>` + typesPokemon
 
             // IMAGEM DO POKEMON
             image.setAttribute(`src`, data.sprites.other["official-artwork"].front_default)
@@ -276,12 +404,12 @@ function nextPoke(){
             document.getElementById('alert-pokemon').classList.remove('d-none')
         })
 }
-function prevPoke(){
+function prevPoke() {
     idPokemon--
-    if(idPokemon > 898){
+    if (idPokemon > 898) {
         idPokemon = 1
     }
-    if(idPokemon < 1){
+    if (idPokemon < 1) {
         idPokemon = 898
     }
     newUrl = url.concat(idPokemon)
@@ -308,7 +436,7 @@ function prevPoke(){
                 typePokemon = translateTypes(typePokemon.type.name)
                 typesPokemon.push(typePokemon)
             }
-            typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>`+ typesPokemon
+            typePokemonHTML.innerHTML = `<span class="text-muted"><em>Tipo(s)</em>: </span>` + typesPokemon
 
             // IMAGEM DO POKEMON
             image.setAttribute(`src`, data.sprites.other["official-artwork"].front_default)
@@ -318,4 +446,13 @@ function prevPoke(){
         }).catch(function (err) {
             document.getElementById('alert-pokemon').classList.remove('d-none')
         })
+}
+
+// MOBILE
+const mobileContent = document.querySelector('.mobile-content')
+const mobile = document.querySelector('.mobile')
+function goToPage(){
+    mobile.style.display = 'none'
+    mobileContent.style.display = 'block'
+    mobileContent.style.animation = 'toTop 1s ease-in-out'
 }

@@ -73,6 +73,111 @@ body{
     transform: scale(1.05);
 }
 
+#resultado-busca{
+    display: none;
+}
+
+.resultado-busca ul{
+    overflow-y: auto;
+    max-height: 20rem;
+    background-color: #fff;
+    width: 100%;
+    position: absolute; 
+    list-style: none;
+    padding: .3rem;
+    border: 1px solid rgb(206,212,218);
+    border-top: none;
+    border-radius: 0 0 .3rem .3rem;
+}
+.resultado-busca ul li{
+    padding: .3rem;
+}
+.resultado-busca ul li:hover{
+    background-color: #ebebeb;
+    border-radius: .3rem;
+    cursor: pointer;
+    padding: .3rem;
+}
+
+.mostra-busca{
+    display: block !important;
+    animation: shows .2s ease-in-out;
+}
+
+.mobile{
+    display: none;
+}
+.mobile-content{
+    display: none;
+}
+
+
+/* MOBILE */
+.container-mobile{
+    padding: 5rem 1rem;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    height: 100vh;
+    align-content: space-around;
+}
+.logo-pokemon{
+    width: 60%;
+    height: auto;       
+}
+.btn-intro{
+    border: none;
+    background-color: rgba(255,255,255,0.3);
+    color: #Fff;
+    padding: .7rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.1);
+}
+.icon-top{
+    position: absolute;
+    bottom: 1rem;
+}
+.icon-top i{
+    font-size: 2rem;
+    color: #fff;
+    animation: pulinho .4s ease-in-out infinite alternate;
+}
+.second{
+    align-content: flex-start;
+}
+.title-mobile{
+    color: rgb(33,144,119);
+    font-size: 1.1rem;
+    line-height: 0.5rem;
+}
+.sub-title-mobile{
+    color: rgb(56,178,150);
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+@keyframes shows {
+    0%{
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
 @keyframes mostraModal {
     0%{
         transform: translateY(-10rem);
@@ -91,6 +196,26 @@ body{
     100%{
         transform: translateY(-10rem);
         opacity: 0;
+    }
+}
+@keyframes toTop {
+    0%{
+        transform: translateY(50rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+@keyframes pulinho {
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-1rem);
+        opacity: 1;
     }
 }
 
