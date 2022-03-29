@@ -51,4 +51,14 @@
     .text-muted{
         color: rgb(56,178,150) !important;
     }
+    .image-pokemon{
+        height: 10rem;
+    }
+    .card-pokemon{
+        min-width: 290px;
+    }
+    .list-group-item{
+        background-color: rgb(132,235,212) !important;
+        color: rgb(33,144,119) !important;
+    }
 }

@@ -11,6 +11,8 @@ body{
 }
 .img-pokemon{
     transition: transform .3s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
 .img-pokemon:hover{
     transform: scale(1.1);
@@ -58,7 +60,7 @@ body{
     border: none;
     border-radius: 100%;
     background-color: rgba(51,51,51,0);
-    color: rgb(220,220,220);
+    color: #6c757d;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +71,7 @@ body{
     padding: 1rem;
 }
 .btn-ball i:hover{
-    filter: brightness(500);
+    filter: brightness(1.05);
     transform: scale(1.05);
 }
 
@@ -160,7 +162,23 @@ body{
     font-weight: 400;
     margin: 0;
 }
-
+.text-light{
+    color: #6c757d !important;
+    font-weight: 400;
+}
+.bola{
+    width: 450px;
+    height: 345px;
+    background-color: red;
+    position: absolute;
+    border-radius: 10px 100% 100% 0;
+    opacity: .5;
+    z-index: 1;
+}
+.card-body{
+    position: relative;
+    z-index: 2;
+}
 
 
 

@@ -84,7 +84,7 @@ function pokeSearch(pokemon) {
         })
 }
 
-let corDeFundo = document.querySelector('body')
+let corDeFundo = document.querySelector('.bola')
 
 function translateTypes(type) {
     switch (type) {
@@ -263,6 +263,8 @@ window.onload = () => {
     setInterval(verificador, 500)
 }
 
+
+// AJUSTAR A BUSCA POKEMON NO MOBILE
 let resultadoBusca = document.getElementById('resultado-busca')
 let urlPoke = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=6000'
 
