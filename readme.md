@@ -13,7 +13,7 @@ Um dos projetos que estou utilizando para estudar mais sobre Bootstrap e requisi
 * [POKEAPI](https://pokeapi.co/docs/v2) - Documentação da Api utilizada no projeto.
 
 ## 💻 Site
-Para testar ou ver como está ficando acesse [Pokemon](https://ronaldo3030.github.io/pokemon-with-pokeapi//)
+Para testar ou ver como está ficando acesse: [Pokemon](https://ronaldo3030.github.io/pokemon-with-pokeapi//)
 
 ## ✒️ Autores
 
