@@ -1,9 +1,11 @@
 const container = $("#container");
 const containerPokemons = document.getElementById("container-pokemons");
+const loading = document.getElementById("loading-pokemon");
 
 $(document).ready(async () => {
   let pokemons = await getAllPokemons("https://pokeapi.co/api/v2/pokemon/?limit=15");
-  containerPokemons.innerHTML = "";
+  loading.classList.add("d-none");
+  containerPokemons.classList.remove("d-none");
   for(let pokemon of await pokemons){
     let name = pokemon.name;
     let img = pokemon.sprites.other["official-artwork"].front_default;
