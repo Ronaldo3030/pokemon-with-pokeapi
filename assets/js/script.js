@@ -9,6 +9,8 @@ $(document).ready(async () => {
   for(let pokemon of await pokemons){
     let name = pokemon.name;
     let img = pokemon.sprites.other["official-artwork"].front_default;
+    getTypes(pokemon.types);
+
     createCard("container-pokemons", img, name.capitalize());
     console.log(pokemon);
     // createCard("container-pokemons", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "Buba");
