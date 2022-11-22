@@ -1,4 +1,4 @@
-function createCard(idDiv, img, name) {
+function createCard(idDiv, img, name, typeOfPokemon) {
   let divRoot = document.getElementById(idDiv);
 
   let cardPokemon = document.createElement("div");
@@ -19,14 +19,22 @@ function createCard(idDiv, img, name) {
   namePokemon.classList.add("name-pokemon");
   namePokemon.appendChild(textNamePokemon);
 
+  let ul = document.createElement("ul");
+  ul.classList.add("type-list");
 
-
-  // let ul = document.createElement("ul");
-  // let li = document.createElement("li");
-
+  for(let type of typeOfPokemon){
+    let li = document.createElement("li");
+    let typeName = document.createTextNode(type);
+    li.appendChild(typeName);
+    li.classList.add("badge-type");
+    ul.appendChild(li);
+  }
+  
+  
   divRoot.appendChild(cardPokemon);
   cardPokemon.appendChild(infoPokemon);
   infoPokemon.appendChild(namePokemon);
   cardPokemon.appendChild(containerImage);
   containerImage.appendChild(imgPokemon);
+  infoPokemon.appendChild(ul);
 }

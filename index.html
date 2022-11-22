@@ -1,32 +1,53 @@
 <!-- https://assets.materialup.com/uploads/7f1c1db6-86fd-449e-b836-336a31b23a75/preview.png -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style-pokemon.css">
-  <title>Pokedex</title>
-</head>
-<body>
-  <header>
-
-  </header>
-  <div class="container" id="container">
-    <div class="loading" id="loading-pokemon">
-      <img class="img-pokeball-loading" src="./assets/img/pokeball.png" alt="loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicons/favicon-16x16.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style-pokemon.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <header></header>
+    <div class="container" id="container">
+      <div class="loading" id="loading-pokemon">
+        <img
+          class="img-pokeball-loading"
+          src="./assets/img/pokeball.png"
+          alt="loading"
+        />
+      </div>
+      <div class="container-pokemons d-none" id="container-pokemons">
+        <div class="card-pokemon">
+          <div class="info-pokemon">
+            <p class="name-pokemon">Bulbassaur</p>
+            <ul class="type-list">
+              <li class="badge-type">Grass</li>
+              <li class="badge-type">Poison</li>
+            </ul>
+          </div>
+          <div class="container-img">
+            <img
+              class="img-pokemon"
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+              alt="image a pokemon"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container-pokemons d-none" id="container-pokemons">
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-  <script src="./assets/js/functions/getTypes.js"></script>
-  <script src="./assets/js/functions/createCard.js"></script>
-  <script src="./assets/js/api/getOnePokemon.js"></script>
-  <script src="./assets/js/api/getAllPokemons.js"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="./assets/js/functions/getTypes.js"></script>
+    <script src="./assets/js/functions/createCard.js"></script>
+    <script src="./assets/js/api/getOnePokemon.js"></script>
+    <script src="./assets/js/api/getAllPokemons.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>

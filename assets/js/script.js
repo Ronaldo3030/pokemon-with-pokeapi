@@ -7,12 +7,16 @@ $(document).ready(async () => {
   loading.classList.add("d-none");
   containerPokemons.classList.remove("d-none");
   for(let pokemon of await pokemons){
-    let name = pokemon.name;
-    let img = pokemon.sprites.other["official-artwork"].front_default;
-    getTypes(pokemon.types);
+    let nameOfPokemon = pokemon.name;
+    let imgOfPokemon = pokemon.sprites.other["official-artwork"].front_default;
+    let typeOfPokemon = [];
+    for(let type of pokemon.types){
+      typeOfPokemon.push(type.type.name.capitalize());
+    }
+    console.log(typeOfPokemon)
+    createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), typeOfPokemon);
+    
 
-    createCard("container-pokemons", img, name.capitalize());
-    console.log(pokemon);
     // createCard("container-pokemons", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "Buba");
   }
 });
