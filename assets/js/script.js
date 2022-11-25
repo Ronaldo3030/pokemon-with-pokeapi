@@ -13,7 +13,7 @@ $(document).ready(async () => {
     for(let type of pokemon.types){
       typeOfPokemon.push(type.type.name.capitalize());
     }
-    console.log(typeOfPokemon)
+    // console.log(typeOfPokemon)
     createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), typeOfPokemon);
     
 

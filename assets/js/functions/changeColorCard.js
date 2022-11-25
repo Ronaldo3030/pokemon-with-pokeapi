@@ -1,99 +1,78 @@
 function changeColorAccordingToType(type) {
   switch (type) {
     case "normal":
-      corDeFundo.style.backgroundColor = bgColors.Normal;
-      return "Normal";
+      return "#75515B";
       break;
     case "fighting":
-      corDeFundo.style.backgroundColor = bgColors.Lutador;
-      return "Lutador";
+      return "#994025";
       break;
     case "flying":
-      corDeFundo.style.backgroundColor = bgColors.Voador;
-      return "Voador";
+      return "#4A677D";
       break;
     case "poison":
-      corDeFundo.style.backgroundColor = bgColors.Venenoso;
-      return "Venenoso";
+      return "#5E2D88";
       break;
     case "ground":
-      corDeFundo.style.backgroundColor = bgColors.Terra;
-      return "Terra";
+      return "#A9702C";
       break;
     case "rock":
-      corDeFundo.style.backgroundColor = bgColors.Pedra;
-      return "Pedra";
+      return "#48180B";
       break;
     case "bug":
-      corDeFundo.style.backgroundColor = bgColors.Inseto;
-      return "Inseto";
+      return "#1C4B27";
       break;
     case "ghost":
-      corDeFundo.style.backgroundColor = bgColors.Fantasma;
-      return "Fantasma";
+      return "#33336B";
       break;
     case "water":
-      corDeFundo.style.backgroundColor = bgColors.Agua;
-      return "Água";
+      return "#1552E2";
       break;
     case "steel":
-      corDeFundo.style.backgroundColor = bgColors.Aço;
-      return "Aço";
+      return "#5F756D";
       break;
     case "fire":
-      corDeFundo.style.backgroundColor = bgColors.Fogo;
-      return "Fogo";
+      return "#AB1F23";
       break;
     case "grass":
-      corDeFundo.style.backgroundColor = bgColors.Grama;
-      return "Grama";
+      return "#147B3D";
       break;
     case "electric":
-      corDeFundo.style.backgroundColor = bgColors.Eletrico;
-      return "Eletrico";
+      return "#E1E32A";
       break;
     case "psychic":
-      corDeFundo.style.backgroundColor = bgColors.Psiquico;
-      return "Psiquico";
+      return "#A32B6C";
       break;
     case "dragon":
-      corDeFundo.style.backgroundColor = bgColors.Dragao;
-      return "Dragão";
+      return "#448B95";
       break;
     case "dark":
-      corDeFundo.style.backgroundColor = bgColors.Sombrio;
-      return "Sombrio";
+      return "#040706";
       break;
     case "fairy":
-      corDeFundo.style.backgroundColor = bgColors.Fada;
-      return "Fada";
+      return "#951A44";
       break;
     case "ice":
-      corDeFundo.style.backgroundColor = bgColors.Gelo;
-      return "Gelo";
+      return "#86D2F5";
       break;
   }
 }
 // FUNÇÃO PARA CLAREAR A COR E ESCURECER A COR
 // CLAREAR PARA A BADGE E ESCURECER PARA A BORDA
 
-const bgColors = {
-  'Inseto': '#1C4B27',
-  'Sombrio': '#040706',
-  'Dragao': '#448B95',
-  'Eletrico': '#E1E32A',
-  'Fada': '#951A44',
-  'Lutador': '#994025',
-  'Fogo': '#AB1F23',
-  'Voador': '#4A677D',
-  'Fantasma': '#33336B',
-  'Grama': '#147B3D',
-  'Terra': '#A9702C',
-  'Gelo': '#86D2F5',
-  'Normal': '#75515B',
-  'Venenoso': '#5E2D88',
-  'Psiquico': '#A32B6C',
-  'Pedra': '#48180B',
-  'Aco': '#5F756D',
-  'Agua': '#1552E2',
-}
+// const bgColors = {
+//   'Inseto': '#1C4B27',
+//   'Sombrio': '#040706',
+//   'Dragao': '#448B95',
+//   'Eletrico': '#E1E32A',
+//   'Fada': '#951A44',
+//   'Fogo': '#AB1F23',
+//   'Fantasma': '#33336B',
+//   'Grama': '#147B3D',
+//   'Terra': '#A9702C',
+//   'Gelo': '#86D2F5',
+//   'Venenoso': '#5E2D88',
+//   'Psiquico': '#A32B6C',
+//   'Pedra': '#48180B',
+//   'Aco': '#5F756D',
+//   'Agua': '#1552E2',
+// }

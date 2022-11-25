@@ -4,9 +4,39 @@ body {
   background-color: #F8F9FA;
   transition: all .4s ease-in-out;
   font-family: 'Roboto', sans-serif;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: #06111F;
+}
+
+header{
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon{
+  width: 30px;
+  height: auto;
+}
+
+.button{
+  background-color: #F8F9FA;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background .2s ease-in-out, color .2s ease-in-out;
+}
+.button:hover{
+  background-color: #06111F;
+  color: #F8F9FA;
 }
 
 .d-none{
@@ -31,8 +61,18 @@ body {
   box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.43);
-  border: 5px double #43c0a3;
   cursor: pointer;
+  position: relative;
+}
+
+.star{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.star i{
+  color: #fff93a;
 }
 
 .card-pokemon ul {
@@ -49,6 +89,7 @@ body {
   width: 80px;
   font-size: 15px;
   font-weight: 500;
+  filter: brightness(1.25);
 }
 
 .card-pokemon .img-pokemon {
@@ -86,6 +127,30 @@ body {
   width: auto;
   height: 150px;
   animation: rotate 1.5s linear infinite alternate;
+}
+
+.input-group{
+  background-color: #F8F9FA;
+  color: #06111F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 20px;
+}
+.input-group input{
+  padding: 2.5px 5px;
+  border: 1px solid #06111F;
+  border-right: none;
+  outline: none;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+}
+.icon-input{
+  border: 1px solid #06111F;
+  height: 25px;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
 }
 
 @keyframes rotate {
