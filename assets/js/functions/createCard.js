@@ -1,7 +1,9 @@
-function createCard(idDiv, img, name, typeOfPokemon) {
+function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   let divRoot = document.getElementById(idDiv);
+  console.log(name)
 
   let cardPokemon = document.createElement("div");
+  cardPokemon.id = treatName(name);
   cardPokemon.classList.add("card-pokemon");
   let colorCard = changeColorAccordingToType(typeOfPokemon[0].toLowerCase());
   cardPokemon.setAttribute("style", `background-color:${colorCard}`);
@@ -13,12 +15,23 @@ function createCard(idDiv, img, name, typeOfPokemon) {
   containerImage.classList.add("container-image");
 
   let buttonFav = document.createElement("div");
+  buttonFav.addEventListener("click", () => favoritePokemon(name, order));
   buttonFav.classList.add("star");
   buttonFav.classList.add("button-fav");
 
   let icon = document.createElement("i");
-  icon.classList.add("far");
   icon.classList.add("fa-star");
+  
+  starPokemons.forEach(pokemon => {
+    let starPokemonName = pokemon.pokemonName
+    if(name.toLowerCase() == starPokemonName){
+      icon.classList.add("fas");
+      return;
+    }
+    icon.classList.add("far");
+  });
+
+
 
   let imgPokemon = document.createElement("img");
   imgPokemon.classList.add("img-pokemon");
