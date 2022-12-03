@@ -1,47 +1,51 @@
 <!-- https://assets.materialup.com/uploads/7f1c1db6-86fd-449e-b836-336a31b23a75/preview.png -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicons/favicon-16x16.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style-pokemon.css" />
-    <title>Pokedex</title>
-  </head>
-  <body>
-    <header>
-      <button class="button">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/imports/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style-pokemon.css" />
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <header class="mb-3">
+    <div class="dropdown">
+      <button class="btn btn-secondary button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="material-symbols-outlined"> menu </span>
       </button>
+      <ul class="dropdown-menu">
+        <li><button class="dropdown-item" type="button"><i class="fas fa-star me-2"></i> Show Favorites</button>
+        </li>
+        <li><button class="dropdown-item" type="button"
+            onclick="return confirm('Do you really want to delete all favorites?')?clearAllStorage():'';"><i class="fas fa-trash me-2"></i>
+            Clear all Favorites</button></li>
+      </ul>
+    </div>
+    <div class="search">
       <div class="input-group">
-        <label for="search-pokemon" hidden>Search your pokemon</label>
-        <input class="input" id="search-pokemon" type="text" />
-        <span class="material-symbols-outlined icon-input"> search </span>
+        <input type="text" class="form-control" placeholder="Search pokémon" aria-label="Search pokémon"
+          aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary btn-search" type="button" id="button-addon2"><i
+            class="fas fa-search"></i></button>
       </div>
-      <a href="https://github.com/Ronaldo3030" target="_blank">
-        <img class="icon" src="assets/img/github.png" alt="redirect github" />
-      </a>
-    </header>
-    <div class="container" id="container">
-      <div class="loading" id="loading-pokemon">
-        <img
-          class="img-pokeball-loading"
-          src="./assets/img/pokeball.png"
-          alt="loading"
-        />
-      </div>
-      <div class="container-pokemons d-none" id="container-pokemons">
-        <!-- <div class="card-pokemon test-gradient">
+    </div>
+    <a href="https://github.com/Ronaldo3030" target="_blank">
+      <img class="icon" src="assets/img/github.png" alt="redirect github" />
+    </a>
+  </header>
+  <div class="container-all" id="container">
+    <div class="loading" id="loading-pokemon">
+      <img class="img-pokeball-loading" src="./assets/img/pokeball.png" alt="loading" />
+    </div>
+    <div class="container-pokemons d-none" id="container-pokemons">
+      <!-- <div class="card-pokemon test-gradient">
           <div class="star button-fav">
             <i class="far fa-star"></i>
           </div>
@@ -60,23 +64,31 @@
             />
           </div>
         </div> -->
-      </div>
     </div>
+  </div>
 
-    <!-- FONTAWESOME -->
-    <script
-      src="https://kit.fontawesome.com/ac5f400d27.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/ac5f400d27.js" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="./assets/js/functions/getAllStorage.js"></script>
-    <script src="./assets/js/functions/favoritePokemon.js"></script>
-    <script src="./assets/js/functions/treatName.js"></script>
-    <script src="./assets/js/functions/changeColorCard.js"></script>
-    <script src="./assets/js/functions/createCard.js"></script>
-    <script src="./assets/js/api/getOnePokemon.js"></script>
-    <script src="./assets/js/api/getAllPokemons.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+  <script>
+    function clearAllStorage() {
+      localStorage.clear();
+      showPokemons();
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./assets/js/functions/getAllStorage.js"></script>
+  <script src="./assets/js/functions/favoritePokemon.js"></script>
+  <script src="./assets/js/functions/treatName.js"></script>
+  <script src="./assets/js/functions/changeColorCard.js"></script>
+  <script src="./assets/js/functions/createCard.js"></script>
+  <script src="./assets/js/api/getOnePokemon.js"></script>
+  <script src="./assets/js/api/getAllPokemons.js"></script>
+  <script src="./assets/js/functions/showPokemons.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/imports/bootstrap/popper.min.js"></script>
+  <script src="./assets/imports/bootstrap/bootstrap.min.js"></script>
+</body>
+
 </html>

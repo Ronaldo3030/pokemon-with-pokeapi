@@ -76,10 +76,10 @@ header {
 }
 
 .button {
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  width: 35px;
-  height: 35px;
+  background-color: transparent;
+  border-radius: 5px;
+  width: 27px;
+  height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,8 +88,8 @@ header {
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 .button:hover {
-  background-color: #06111f;
-  color: #f8f9fa;
+  color: #06111f;
+  background-color: #f8f9fa;
 }
 
 .d-none {
@@ -116,16 +116,27 @@ header {
   -moz-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.43);
   cursor: pointer;
   position: relative;
+  transition: transform .1s ease-in-out;
+}
+.card-pokemon:hover{
+  transform: scale(1.025);
 }
 
 .star {
   position: absolute;
   right: 10px;
   top: 10px;
+
 }
 
 .star i {
   color: #fbfbfb;
+  transition: transform .1s ease-in-out, color .1s ease-in-out;
+}
+
+.star i:hover{
+  transform: scale(1.1);
+  color: #f7f959 !important;
 }
 
 .yellow {
@@ -186,28 +197,22 @@ header {
   animation: rotate 1.5s linear infinite alternate;
 }
 
-.input-group {
-  background-color: #f8f9fa;
+.btn-search{
   color: #06111f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  height: 20px;
+  background-color: #f8f9fa;
 }
-.input-group input {
-  padding: 2.5px 5px;
-  border: 1px solid #06111f;
-  border-right: none;
-  outline: none;
-  height: 100%;
-  border-radius: 5px 0 0 5px;
+
+.btn-search:hover{
+  color: #f8f9fa;
+  background-color: #06111f;
 }
-.icon-input {
-  border: 1px solid #06111f;
-  height: 25px;
-  border-left: none;
-  border-radius: 0 5px 5px 0;
+
+.input-group input{
+  color: #06111f;
+  background-color: #f8f9fa;
+}
+.input-group > *{
+  border: none;
 }
 
 @keyframes rotate {
@@ -378,4 +383,16 @@ header {
     rgba(134, 210, 245, 1) 0%,
     rgba(154, 230, 255, 1) 100%
   );
+}
+
+.dropdown-menu {
+  background-color: #fbfbfb;
+}
+.dropdown-menu li button{
+  color: #06111f !important;
+
+}
+
+.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active{
+  background-color: transparent;
 }
