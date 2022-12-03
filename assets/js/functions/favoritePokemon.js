@@ -1,9 +1,17 @@
-function favoritePokemon(name, order){
+function favoritePokemon(name, order) {
+  let allStorage = getAllStorage();
+
   let pokemonName = treatName(name);
   let pokemon = {
     pokemonName,
-    order
-  }
+    order,
+  };
 
-  localStorage.setItem(pokemonName, JSON.stringify(pokemon));
+  const searchPokemonInLocalStorage = allStorage.some((storagePokemon) => storagePokemon.pokemonName == pokemon.pokemonName);
+
+  if (!searchPokemonInLocalStorage) {
+    localStorage.setItem(pokemonName, JSON.stringify(pokemon));
+    return;
+  }
+  localStorage.removeItem(pokemonName);
 }

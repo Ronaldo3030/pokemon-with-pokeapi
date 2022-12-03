@@ -72,7 +72,11 @@ header{
 }
 
 .star i{
-  color: #fff93a;
+  color: #fbfbfb;
+}
+
+.yellow{
+  color: #f7f959 !important;
 }
 
 .card-pokemon ul {

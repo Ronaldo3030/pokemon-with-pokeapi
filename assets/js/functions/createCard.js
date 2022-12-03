@@ -1,6 +1,5 @@
 function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   let divRoot = document.getElementById(idDiv);
-  console.log(name)
 
   let cardPokemon = document.createElement("div");
   cardPokemon.id = treatName(name);
@@ -15,23 +14,23 @@ function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   containerImage.classList.add("container-image");
 
   let buttonFav = document.createElement("div");
-  buttonFav.addEventListener("click", () => favoritePokemon(name, order));
+  buttonFav.addEventListener("click", () => {
+    favoritePokemon(name, order);
+    icon.classList.toggle("yellow");
+  });
   buttonFav.classList.add("star");
   buttonFav.classList.add("button-fav");
 
   let icon = document.createElement("i");
   icon.classList.add("fa-star");
-  
-  starPokemons.forEach(pokemon => {
-    let starPokemonName = pokemon.pokemonName
-    if(name.toLowerCase() == starPokemonName){
-      icon.classList.add("fas");
-      return;
+  icon.classList.add("fas");
+
+  starPokemons.forEach((pokemon) => {
+    let starPokemonName = pokemon.pokemonName;
+    if (name.toLowerCase() == starPokemonName) {
+      icon.classList.add("yellow");
     }
-    icon.classList.add("far");
   });
-
-
 
   let imgPokemon = document.createElement("img");
   imgPokemon.classList.add("img-pokemon");
@@ -45,15 +44,17 @@ function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   let ul = document.createElement("ul");
   ul.classList.add("type-list");
 
-  for(let type of typeOfPokemon){
+  for (let type of typeOfPokemon) {
     let li = document.createElement("li");
     let typeName = document.createTextNode(type);
     li.appendChild(typeName);
     li.classList.add("badge-type");
-    li.setAttribute("style", `background-color:${changeColorAccordingToType(type.toLowerCase())}`);
+    li.setAttribute(
+      "style",
+      `background-color:${changeColorAccordingToType(type.toLowerCase())}`
+    );
     ul.appendChild(li);
   }
-  
 
   divRoot.appendChild(cardPokemon);
   cardPokemon.appendChild(infoPokemon);
@@ -62,5 +63,5 @@ function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   containerImage.appendChild(imgPokemon);
   infoPokemon.appendChild(ul);
   buttonFav.appendChild(icon);
-  cardPokemon.appendChild(buttonFav)
+  cardPokemon.appendChild(buttonFav);
 }
