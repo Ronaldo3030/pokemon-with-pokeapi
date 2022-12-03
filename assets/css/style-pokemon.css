@@ -131,11 +131,11 @@ header {
 
 .star i {
   color: #fbfbfb;
-  transition: transform .1s ease-in-out, color .1s ease-in-out;
+  transition: transform .4s ease-in-out, color .2s ease-in-out;
 }
 
 .star i:hover{
-  transform: scale(1.1);
+  transform: rotate(360deg);
   color: #f7f959 !important;
 }
 
@@ -331,12 +331,12 @@ header {
   );
 }
 
-.eletric {
-  background: rgb(225, 227, 42);
+.electric {
+  background: rgb(185, 227, 42);
   background: linear-gradient(
     0deg,
-    rgba(225, 227, 42, 1) 0%,
-    rgba(245, 247, 62, 1) 100%
+    rgba(185, 184, 2, 1) 0%,
+    rgba(205, 207, 22, 1) 100%
   );
 }
 
@@ -395,4 +395,23 @@ header {
 
 .btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active{
   background-color: transparent;
+}
+
+
+.animated-border {
+  --angle: 0deg;
+  border: 5px solid;
+  border-image: linear-gradient(var(--angle), #12c2e9, #c471ed, #ffc107) 1;
+  animation: 5s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }

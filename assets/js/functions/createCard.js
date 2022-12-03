@@ -6,6 +6,9 @@ function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   cardPokemon.classList.add("card-pokemon");
   let colorCard = changeColorAccordingToType(typeOfPokemon[0].toLowerCase());
   cardPokemon.classList.add(typeOfPokemon[0].toLowerCase());
+  if(checkLegendary(treatName(name))){
+    cardPokemon.classList.add("animated-border");
+  }
 
   let infoPokemon = document.createElement("div");
   infoPokemon.classList.add("info-pokemon");

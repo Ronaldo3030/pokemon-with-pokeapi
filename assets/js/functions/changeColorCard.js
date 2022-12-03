@@ -37,7 +37,7 @@ function changeColorAccordingToType(type) {
       return "#147B3D";
       break;
     case "electric":
-      return "#E1E32A";
+      return "#a5a722";
       break;
     case "psychic":
       return "#A32B6C";

@@ -24,7 +24,8 @@
         <li><button class="dropdown-item" type="button"><i class="fas fa-star me-2"></i> Show Favorites</button>
         </li>
         <li><button class="dropdown-item" type="button"
-            onclick="return confirm('Do you really want to delete all favorites?')?clearAllStorage():'';"><i class="fas fa-trash me-2"></i>
+            onclick="return confirm('Do you really want to delete all favorites?')?clearAllStorage():'';"><i
+              class="fas fa-trash me-2"></i>
             Clear all Favorites</button></li>
       </ul>
     </div>
@@ -44,26 +45,23 @@
     <div class="loading" id="loading-pokemon">
       <img class="img-pokeball-loading" src="./assets/img/pokeball.png" alt="loading" />
     </div>
-    <div class="container-pokemons d-none" id="container-pokemons">
-      <!-- <div class="card-pokemon test-gradient">
-          <div class="star button-fav">
-            <i class="far fa-star"></i>
-          </div>
-          <div class="info-pokemon">
-            <p class="name-pokemon">Bulbassaur</p>
-            <ul class="type-list">
-              <li class="badge-type">Grass</li>
-              <li class="badge-type">Poison</li>
-            </ul>
-          </div>
-          <div class="container-img">
-            <img
-              class="img-pokemon"
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
-              alt="image a pokemon"
-            />
-          </div>
-        </div> -->
+    <div class="container-pokemons d-none mb-4" id="container-pokemons">
+      <!-- <div class="card-pokemon test-gradient animated-border">
+        <div class="star button-fav">
+          <i class="far fa-star"></i>
+        </div>
+        <div class="info-pokemon">
+          <p class="name-pokemon">Bulbassaur</p>
+          <ul class="type-list">
+            <li class="badge-type">Grass</li>
+            <li class="badge-type">Poison</li>
+          </ul>
+        </div>
+        <div class="container-img">
+          <img class="img-pokemon" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
+            alt="image a pokemon" />
+        </div>
+      </div> -->
     </div>
   </div>
 
@@ -78,6 +76,7 @@
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./assets/js/functions/checkLegendary.js"></script>
   <script src="./assets/js/functions/getAllStorage.js"></script>
   <script src="./assets/js/functions/favoritePokemon.js"></script>
   <script src="./assets/js/functions/treatName.js"></script>

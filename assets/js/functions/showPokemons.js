@@ -1,5 +1,5 @@
 async function showPokemons() {
-  let pokemons = await getAllPokemons("https://pokeapi.co/api/v2/pokemon/?limit=24");
+  let pokemons = await getAllPokemons("https://pokeapi.co/api/v2/pokemon/?limit=240");
   loading.classList.add("d-none");
   containerPokemons.innerHTML = "";
   containerPokemons.classList.remove("d-none");
