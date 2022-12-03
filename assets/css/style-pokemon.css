@@ -1,29 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 body {
-  background-color: #F8F9FA;
-  transition: all .4s ease-in-out;
-  font-family: 'Roboto', sans-serif;
+  transition: all 0.4s ease-in-out;
+  font-family: "Roboto", sans-serif;
   display: grid;
   align-items: center;
   justify-content: center;
-  color: #06111F;
+  color: #06111f;
+  font-size: 12px;
+  background: #2980b9
+    url("https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png")
+    repeat 0 0;
+  -webkit-animation: 10s linear 0s normal none infinite animate;
+  -moz-animation: 10s linear 0s normal none infinite animate;
+  -ms-animation: 10s linear 0s normal none infinite animate;
+  -o-animation: 10s linear 0s normal none infinite animate;
+  animation: 10s linear 0s normal none infinite animate;
 }
 
-header{
+@-webkit-keyframes animate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 0;
+  }
+}
+
+@-moz-keyframes animate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 0;
+  }
+}
+
+@-ms-keyframes animate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 0;
+  }
+}
+
+@-o-keyframes animate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 0;
+  }
+}
+
+@keyframes animate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 0;
+  }
+}
+
+header {
   padding: 15px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.icon{
+.icon {
   width: 30px;
   height: auto;
 }
 
-.button{
-  background-color: #F8F9FA;
+.button {
+  background-color: #f8f9fa;
   border-radius: 10px;
   width: 35px;
   height: 35px;
@@ -32,14 +85,14 @@ header{
   justify-content: center;
   border: none;
   cursor: pointer;
-  transition: background .2s ease-in-out, color .2s ease-in-out;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-.button:hover{
-  background-color: #06111F;
-  color: #F8F9FA;
+.button:hover {
+  background-color: #06111f;
+  color: #f8f9fa;
 }
 
-.d-none{
+.d-none {
   display: none !important;
 }
 
@@ -50,8 +103,8 @@ header{
 }
 
 .card-pokemon {
-  background-color: #46D1B1;
-  color: #F8F9FA;
+  background-color: #46d1b1;
+  color: #f8f9fa;
   padding: 15px 25px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -65,17 +118,17 @@ header{
   position: relative;
 }
 
-.star{
+.star {
   position: absolute;
   right: 10px;
   top: 10px;
 }
 
-.star i{
+.star i {
   color: #fbfbfb;
 }
 
-.yellow{
+.yellow {
   color: #f7f959 !important;
 }
 
@@ -86,7 +139,7 @@ header{
 }
 
 .card-pokemon .badge-type {
-  background-color: #87E1CC;
+  background-color: #87e1cc;
   border-radius: 30px;
   margin: 5px 0;
   text-align: center;
@@ -133,25 +186,25 @@ header{
   animation: rotate 1.5s linear infinite alternate;
 }
 
-.input-group{
-  background-color: #F8F9FA;
-  color: #06111F;
+.input-group {
+  background-color: #f8f9fa;
+  color: #06111f;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   height: 20px;
 }
-.input-group input{
+.input-group input {
   padding: 2.5px 5px;
-  border: 1px solid #06111F;
+  border: 1px solid #06111f;
   border-right: none;
   outline: none;
   height: 100%;
   border-radius: 5px 0 0 5px;
 }
-.icon-input{
-  border: 1px solid #06111F;
+.icon-input {
+  border: 1px solid #06111f;
   height: 25px;
   border-left: none;
   border-radius: 0 5px 5px 0;
@@ -161,4 +214,168 @@ header{
   100% {
     rotate: 720deg;
   }
+}
+
+.test-gradient {
+}
+
+/* COLOR CARD */
+.grass {
+  background: rgb(20, 123, 61);
+  background: linear-gradient(
+    0deg,
+    rgba(20, 123, 61, 1) 0%,
+    rgba(40, 143, 81, 1) 100%
+  );
+}
+.fire {
+  background: rgb(171, 31, 35);
+  background: linear-gradient(
+    0deg,
+    rgba(171, 31, 35, 1) 0%,
+    rgba(191, 51, 55, 1) 100%
+  );
+}
+.water {
+  background: rgb(21, 82, 226);
+  background: linear-gradient(
+    0deg,
+    rgba(21, 82, 226, 1) 0%,
+    rgba(41, 102, 246, 1) 100%
+  );
+}
+
+.normal {
+  background: rgb(117, 81, 91);
+  background: linear-gradient(
+    0deg,
+    rgba(117, 81, 91, 1) 0%,
+    rgba(137, 101, 111, 1) 100%
+  );
+}
+
+.fighting {
+  background: rgb(153, 64, 37);
+  background: linear-gradient(
+    0deg,
+    rgba(153, 64, 37, 1) 0%,
+    rgba(173, 84, 57, 1) 100%
+  );
+}
+
+.flying {
+  background: rgb(74, 103, 125);
+  background: linear-gradient(
+    0deg,
+    rgba(74, 103, 125, 1) 0%,
+    rgba(94, 113, 145, 1) 100%
+  );
+}
+
+.poison {
+  background: rgb(94, 45, 136);
+  background: linear-gradient(
+    0deg,
+    rgba(94, 45, 136, 1) 0%,
+    rgba(114, 65, 156, 1) 100%
+  );
+}
+
+.ground {
+  background: rgb(169, 112, 44);
+  background: linear-gradient(
+    0deg,
+    rgba(169, 112, 44, 1) 0%,
+    rgba(189, 132, 64, 1) 100%
+  );
+}
+
+.rock {
+  background: rgb(72, 24, 11);
+  background: linear-gradient(
+    0deg,
+    rgba(72, 24, 11, 1) 0%,
+    rgba(92, 44, 31, 1) 100%
+  );
+}
+
+.bug {
+  background: rgb(28, 75, 39);
+  background: linear-gradient(
+    0deg,
+    rgba(28, 75, 39, 1) 0%,
+    rgba(48, 95, 59, 1) 100%
+  );
+}
+
+.ghost {
+  background: rgb(51, 51, 107);
+  background: linear-gradient(
+    0deg,
+    rgba(51, 51, 107, 1) 0%,
+    rgba(71, 71, 127, 1) 100%
+  );
+}
+
+.steel {
+  background: rgb(95, 117, 109);
+  background: linear-gradient(
+    0deg,
+    rgba(95, 117, 109, 1) 0%,
+    rgba(115, 137, 129, 1) 100%
+  );
+}
+
+.eletric {
+  background: rgb(225, 227, 42);
+  background: linear-gradient(
+    0deg,
+    rgba(225, 227, 42, 1) 0%,
+    rgba(245, 247, 62, 1) 100%
+  );
+}
+
+.psychic {
+  background: rgb(163, 43, 108);
+  background: linear-gradient(
+    0deg,
+    rgba(163, 43, 108, 1) 0%,
+    rgba(183, 63, 128, 1) 100%
+  );
+}
+
+.dragon {
+  background: rgb(68, 139, 149);
+  background: linear-gradient(
+    0deg,
+    rgba(68, 139, 149, 1) 0%,
+    rgba(88, 159, 169, 1) 100%
+  );
+}
+
+.dark {
+  background: rgb(4, 7, 6);
+  background: linear-gradient(
+    0deg,
+    rgba(4, 7, 6, 1) 0%,
+    rgba(24, 27, 26, 1) 100%
+  );
+}
+
+.fairy {
+  background: rgb(149, 26, 68);
+  background: linear-gradient(
+    0deg,
+    rgba(149, 26, 68, 1) 0%,
+    rgba(169, 46, 88, 1) 100%
+  );
+}
+
+.ice {
+  background: rgb(134, 210, 245);
+  background: linear-gradient(
+    0deg,
+    rgba(134, 210, 245, 1) 0%,
+    rgba(154, 230, 255, 1) 100%
+  );
 }

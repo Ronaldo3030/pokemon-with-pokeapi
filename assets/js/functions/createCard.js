@@ -5,7 +5,7 @@ function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   cardPokemon.id = treatName(name);
   cardPokemon.classList.add("card-pokemon");
   let colorCard = changeColorAccordingToType(typeOfPokemon[0].toLowerCase());
-  cardPokemon.setAttribute("style", `background-color:${colorCard}`);
+  cardPokemon.classList.add(typeOfPokemon[0].toLowerCase());
 
   let infoPokemon = document.createElement("div");
   infoPokemon.classList.add("info-pokemon");
