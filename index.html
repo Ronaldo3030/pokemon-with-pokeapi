@@ -71,11 +71,14 @@
   <script>
     function clearAllStorage() {
       localStorage.clear();
-      showPokemons();
+      document.querySelector(".container-pokemons").innerHTML = "";
+      position = 24;
+      showPokemons(0, 24);
     }
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./assets/js/functions/addInScroll.js"></script>
   <script src="./assets/js/functions/checkLegendary.js"></script>
   <script src="./assets/js/functions/getAllStorage.js"></script>
   <script src="./assets/js/functions/favoritePokemon.js"></script>

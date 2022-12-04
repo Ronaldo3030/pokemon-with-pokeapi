@@ -3,7 +3,7 @@ const containerPokemons = document.getElementById("container-pokemons");
 const loading = document.getElementById("loading-pokemon");
 const inputSearch = document.getElementById("search");
 
-$(document).ready(async () => showPokemons());
+$(document).ready(async () => showPokemons(0, 24));
 
 inputSearch.addEventListener('input', async () => {
   let valueInput = inputSearch.value

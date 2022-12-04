@@ -1,7 +1,6 @@
-async function showPokemons() {
-  let pokemons = await getAllPokemons("https://pokeapi.co/api/v2/pokemon/?limit=240");
+async function showPokemons(offset, limit) {
+  let pokemons = await getAllPokemons(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`);
   loading.classList.add("d-none");
-  containerPokemons.innerHTML = "";
   containerPokemons.classList.remove("d-none");
 
   let favoritesPokemonLocalStorage = getAllStorage();
