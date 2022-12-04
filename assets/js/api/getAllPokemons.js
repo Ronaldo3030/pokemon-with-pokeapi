@@ -8,6 +8,8 @@ async function getAllPokemons(url) {
       console.log("ERRO: " + err);
     });
   
+    console.log(reqPokemons);
+
   let objPokemons = await reqPokemons.results;
   
   let pokemons = [];

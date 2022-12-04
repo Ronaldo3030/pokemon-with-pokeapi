@@ -194,7 +194,7 @@ header {
 .img-pokeball-loading {
   width: auto;
   height: 150px;
-  animation: rotate 1.5s linear infinite alternate;
+  animation: rotate-ball 1.5s linear infinite alternate;
 }
 
 .btn-search{
@@ -213,15 +213,6 @@ header {
 }
 .input-group > *{
   border: none;
-}
-
-@keyframes rotate {
-  100% {
-    rotate: 720deg;
-  }
-}
-
-.test-gradient {
 }
 
 /* COLOR CARD */
@@ -402,7 +393,7 @@ header {
   --angle: 0deg;
   border: 5px solid;
   border-image: linear-gradient(var(--angle), #12c2e9, #c471ed, #ffc107) 1;
-  animation: 5s rotate linear infinite;
+  animation: 1s rotate linear infinite;
 }
 
 @keyframes rotate {
@@ -414,4 +405,11 @@ header {
   syntax: '<angle>';
   initial-value: 0deg;
   inherits: false;
+}
+
+
+@keyframes rotate-ball {
+  100% {
+    rotate: 720deg;
+  }
 }
