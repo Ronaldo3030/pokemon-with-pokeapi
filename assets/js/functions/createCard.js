@@ -7,6 +7,7 @@ function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   let colorCard = changeColorAccordingToType(typeOfPokemon[0].toLowerCase());
   cardPokemon.classList.add(typeOfPokemon[0].toLowerCase());
   if(checkLegendary(treatName(name))){
+    console.log('chego')
     cardPokemon.classList.add("animated-border");
   }
 

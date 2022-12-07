@@ -5,6 +5,7 @@ const inputSearch = document.getElementById("search");
 
 $(document).ready(async () => showPokemons(0, 24));
 
+// SEARCH POKEMON
 inputSearch.addEventListener('input', async () => {
   let valueInput = inputSearch.value
   if (valueInput) {
