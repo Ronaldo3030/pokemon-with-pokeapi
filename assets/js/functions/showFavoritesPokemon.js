@@ -14,6 +14,5 @@ function showFavoritesPokemon(){
       typeOfPokemon.push(type.type.name.capitalize());
     }
     createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage);
-    console.log(favoritePokemon);
   })
 }
