@@ -39,11 +39,12 @@
     </div>
     <div class="search">
       <div class="input-group">
-        <input id="search" type="text" class="form-control" placeholder="Search pokémon" aria-label="Search pokémon"
+        <input onkeyup="searchPokemon(this.value)" id="search" type="text" class="form-control" placeholder="Search pokémon" aria-label="Search pokémon"
           aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary btn-search" type="button" id="button-addon2"><i
             class="fas fa-search"></i></button>
       </div>
+      <ul id="search-result" class="list-group d-none"></ul>
     </div>
     <a href="https://github.com/Ronaldo3030" target="_blank">
       <img class="icon" src="assets/img/github.png" alt="redirect github" />
@@ -89,7 +90,11 @@
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./assets/js/functions/showOnePokemon.js"></script>
+  <script src="./assets/js/functions/firstUpper.js"></script>
+  <script src="./assets/js/api/getRequest.js"></script>
   <script src="./assets/js/api/getOnePokemon.js"></script>
+  <script src="./assets/js/functions/searchPokemon.js"></script>
   <script src="./assets/js/functions/showFavoritesPokemon.js"></script>
   <script src="./assets/js/functions/getAllStorage.js"></script>
   <script src="./assets/js/functions/getFavorites.js"></script>

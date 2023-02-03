@@ -197,15 +197,46 @@ header {
   animation: rotate-ball 1.5s linear infinite alternate;
 }
 
+.search{
+  font-size: 1rem;
+  position: relative;
+}
+
+.search .list-group{
+  border-radius: 0 0 3px 3px;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  top: 33px;
+  height: 15rem;
+  overflow: auto;
+}
+.search .list-group li{
+  color: #06111f;
+  background-color: #f8f9fa;
+  transition: background .05s ease-in-out, color .05s ease-in-out;
+}
+.search .list-group li:hover{
+  background-color: #0F6DAC;
+  color: white;
+  cursor: pointer;
+}
+
 .btn-search{
   color: #06111f;
   background-color: #f8f9fa;
 }
-
 .btn-search:hover{
-  color: #f8f9fa;
-  background-color: #06111f;
+  color: #06111f;
+  background-color: #f8f9fa;
+  cursor: auto;
 }
+.btn-search:active{
+  color: #06111f !important;
+  background-color: #f8f9fa !important;
+  cursor: auto !important;
+}
+
 
 .input-group input{
   color: #06111f;
