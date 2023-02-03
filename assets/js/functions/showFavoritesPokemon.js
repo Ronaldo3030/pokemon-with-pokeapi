@@ -1,10 +1,19 @@
 function showFavoritesPokemon(){
   const objFavoritesPokemons = {...localStorage};
-  // let favoritesPokemons = Object.keys(objFavoritesPokemons).map((key) => {
-  //   return JSON.parse(objFavoritesPokemons[key]);
-  // });
+  document.getElementById('container-pokemons').innerHTML = '';
+  Object.keys(objFavoritesPokemons).forEach(async favoritePokemon => {
+    let reqFavoritePokemon = await getOnePokemon(`https://pokeapi.co/api/v2/pokemon/${favoritePokemon}`);
 
-  Object.keys(objFavoritesPokemons).forEach(favoritePokemon => {
+    let favoritesPokemonLocalStorage = getAllStorage();
+
+    let nameOfPokemon = reqFavoritePokemon.name;
+    let imgOfPokemon = reqFavoritePokemon.sprites.other["official-artwork"].front_default;
+    let orderOfPokemon = reqFavoritePokemon.order;
+    let typeOfPokemon = [];
+    for (let type of reqFavoritePokemon.types) {
+      typeOfPokemon.push(type.type.name.capitalize());
+    }
+    createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage);
     console.log(favoritePokemon);
   })
 }
