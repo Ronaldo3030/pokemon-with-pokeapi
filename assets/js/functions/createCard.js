@@ -42,7 +42,11 @@ async function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons, 
 
   let imgPokemon = document.createElement("img");
   imgPokemon.classList.add("img-pokemon");
-  imgPokemon.setAttribute("src", img);
+  if(!img){
+    imgPokemon.setAttribute("src", './assets/img/no-image.png');
+  }else{
+    imgPokemon.setAttribute("src", img);
+  }
 
   let textNamePokemon = document.createTextNode(name);
   let namePokemon = document.createElement("p");

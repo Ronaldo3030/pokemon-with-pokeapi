@@ -16,31 +16,127 @@
 
 <body>
   <header class="mb-3">
-    <div class="dropdown">
-      <button class="btn btn-secondary button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <span class="material-symbols-outlined"> menu </span>
-      </button>
-      <ul class="dropdown-menu">
-        <!-- <li onclick="showFavoritesPokemon();"><button class="dropdown-item" type="button"><i class="fas fa-star me-2"></i> Show Favorites</button> -->
-        </li>
-        <li><button class="dropdown-item" type="button"
-            onclick="return confirm('Do you really want to delete all favorites?')?clearAllStorage():'';"><i
-              class="fas fa-trash me-2"></i>
-            Clear all Favorites</button></li>
-        <li><button class="dropdown-item" type="button"
-            onclick="showFavoritesPokemon()"><i
-              class="fa-star fas me-2"></i>
-            Show favorites pokemons</button></li>
-        <li><button class="dropdown-item" type="button"
-            onclick="initPage()"><i
-              class="fa-list fas me-2"></i>
-            Show all pokemons</button></li>
-      </ul>
+    <div class="d-flex">
+      <div class="dropdown">
+        <button class="btn btn-secondary button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="material-symbols-outlined"> menu </span>
+        </button>
+        <ul class="dropdown-menu">
+          <!-- <li onclick="showFavoritesPokemon();"><button class="dropdown-item" type="button"><i class="fas fa-star me-2"></i> Show Favorites</button> -->
+          </li>
+          <li><button class="dropdown-item" type="button"
+              onclick="return confirm('Do you really want to delete all favorites?')?clearAllStorage():'';"><i
+                class="fas fa-trash me-2"></i>
+              Clear all Favorites</button></li>
+          <li><button class="dropdown-item" type="button" onclick="showFavoritesPokemon()"><i
+                class="fa-star fas me-2"></i>
+              Show favorites pokemons</button></li>
+          <li><button class="dropdown-item" type="button" onclick="initPage()"><i class="fa-list fas me-2"></i>
+              Show all pokemons</button></li>
+        </ul>
+      </div>
+      <div class="ms-2 dropdown">
+        <button class="btn btn-secondary button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-filter"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-types">
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/bug.svg" alt="">
+              <p>Bug</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/dark.svg" alt="">
+              <p>Dark</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/dragon.svg" alt="">
+              <p>Dragon</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/electric.svg" alt="">
+              <p>Electric</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/fairy.svg" alt="">
+              <p>Fairy</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/fighting.svg" alt="">
+              <p>Fighting</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/fire.svg" alt="">
+              <p>Fire</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/flying.svg" alt="">
+              <p>Flying</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/ghost.svg" alt="">
+              <p>Ghost</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/grass.svg" alt="">
+              <p>Grass</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/ground.svg" alt="">
+              <p>Ground</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/ice.svg" alt="">
+              <p>Ice</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/normal.svg" alt="">
+              <p>Normal</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/poison.svg" alt="">
+              <p>Poison</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/psychic.svg" alt="">
+              <p>Psychic</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/rock.svg" alt="">
+              <p>Rock</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/steel.svg" alt="">
+              <p>Steel</p>
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" onclick="showType(this)"><img src="./assets/img/pokemon-type/water.svg" alt="">
+              <p>Water</p>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="search">
       <div class="input-group">
-        <input onkeyup="searchPokemon(this.value)" id="search" type="text" class="form-control" placeholder="Search pokémon" aria-label="Search pokémon"
-          aria-describedby="button-addon2">
+        <input onkeyup="searchPokemon(this.value)" id="search" type="text" class="form-control"
+          placeholder="Search pokémon" aria-label="Search pokémon" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary btn-search" type="button" id="button-addon2"><i
             class="fas fa-search"></i></button>
       </div>
@@ -49,6 +145,7 @@
     <a href="https://github.com/Ronaldo3030" target="_blank">
       <img class="icon" src="assets/img/github.png" alt="redirect github" />
     </a>
+
   </header>
   <div class="container-all" id="container">
     <div class="loading" id="loading-pokemon">
@@ -90,6 +187,7 @@
   </script>
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="./assets/js/functions/showType.js"></script>
   <script src="./assets/js/functions/verifyIsLegendary.js"></script>
   <script src="./assets/js/functions/showOnePokemon.js"></script>
   <script src="./assets/js/functions/firstUpper.js"></script>

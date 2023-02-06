@@ -5,6 +5,10 @@ const loading = document.getElementById("loading-pokemon");
 
 function initPage(){
   document.getElementById('container-pokemons').innerHTML = '';
+  
+  // ACTIVE SCROLL GET POKEMON
+  requestMade = false;
+
   $(document).ready(async () => showPokemons(0, 24));
 }
 

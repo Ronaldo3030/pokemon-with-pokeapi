@@ -408,11 +408,31 @@ header {
   );
 }
 
+.dropdown-types {
+  background-color: #06111f !important;
+  color: #f8f9fa !important;
+}
+.dropdown-types button {
+  display: flex;
+  align-items: center;
+  transition: background .1s ease-in-out;
+}
+.dropdown-types button:hover{
+  background-color: #212c3a !important;
+}
+.dropdown-types p {
+  color: #f8f9fa;
+  margin: 0 !important;
+  margin-left: 10px !important;
+}
+.dropdown-types img{
+  width: 25px;
+}
 .dropdown-menu {
   background-color: #fbfbfb;
 }
 .dropdown-menu li button{
-  color: #06111f !important;
+  color: #06111f;
 
 }
 
