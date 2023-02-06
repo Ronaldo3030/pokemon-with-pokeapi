@@ -6,6 +6,7 @@ async function showPokemons(offset, limit) {
   let favoritesPokemonLocalStorage = getAllStorage();
 
   for (let pokemon of await pokemons) {
+    let idOfPokemon = pokemon.id;
     let nameOfPokemon = pokemon.name;
     let imgOfPokemon = pokemon.sprites.other["official-artwork"].front_default;
     let orderOfPokemon = pokemon.order;
@@ -13,6 +14,6 @@ async function showPokemons(offset, limit) {
     for (let type of pokemon.types) {
       typeOfPokemon.push(type.type.name.capitalize());
     }
-    createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage);
+    createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage, idOfPokemon);
   }
 }

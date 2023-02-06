@@ -6,6 +6,7 @@ function showFavoritesPokemon(){
 
     let favoritesPokemonLocalStorage = getAllStorage();
 
+    let idOfPokemon = reqFavoritePokemon.id;
     let nameOfPokemon = reqFavoritePokemon.name;
     let imgOfPokemon = reqFavoritePokemon.sprites.other["official-artwork"].front_default;
     let orderOfPokemon = reqFavoritePokemon.order;
@@ -13,6 +14,6 @@ function showFavoritesPokemon(){
     for (let type of reqFavoritePokemon.types) {
       typeOfPokemon.push(type.type.name.capitalize());
     }
-    createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage);
+    createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage, idOfPokemon);
   })
 }

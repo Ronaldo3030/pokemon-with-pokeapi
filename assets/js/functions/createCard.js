@@ -1,4 +1,4 @@
-async function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
+async function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons, idOfPokemon) {
   let divRoot = document.getElementById(idDiv);
 
   let cardPokemon = document.createElement("div");
@@ -9,8 +9,10 @@ async function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) 
   cardPokemon.classList.add("card-pokemon");
   let colorCard = changeColorAccordingToType(typeOfPokemon[0].toLowerCase());
   cardPokemon.classList.add(typeOfPokemon[0].toLowerCase());
-  if(await verifyIsLegendary(treatName(name))){
-    cardPokemon.classList.add("animated-border");
+  if(idOfPokemon <= 1008){
+    if(await verifyIsLegendary(idOfPokemon)){
+      cardPokemon.classList.add("animated-border");
+    }
   }
 
   let infoPokemon = document.createElement("div");
