@@ -1,12 +1,15 @@
-function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
+async function createCard(idDiv, img, name, order, typeOfPokemon, starPokemons) {
   let divRoot = document.getElementById(idDiv);
 
   let cardPokemon = document.createElement("div");
+  cardPokemon.addEventListener("click", async () => {
+    // testes
+  });
   cardPokemon.id = treatName(name);
   cardPokemon.classList.add("card-pokemon");
   let colorCard = changeColorAccordingToType(typeOfPokemon[0].toLowerCase());
   cardPokemon.classList.add(typeOfPokemon[0].toLowerCase());
-  if(checkLegendary(treatName(name))){
+  if(await verifyIsLegendary(treatName(name))){
     cardPokemon.classList.add("animated-border");
   }
 
