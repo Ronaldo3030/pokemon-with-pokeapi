@@ -485,3 +485,21 @@ header {
     rotate: 720deg;
   }
 }
+
+
+@media(max-width:900px){
+  body{
+    display: block;
+    padding: 0 10px;
+  }
+  header{
+    min-width: auto;
+  }
+  .container-pokemons {
+    grid-template-columns: 1fr;
+    justify-items:center;
+  }
+  .card-pokemon{
+    width: 80%;
+  }
+}
