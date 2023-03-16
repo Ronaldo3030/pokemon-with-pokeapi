@@ -14,6 +14,6 @@ async function showPokemons(offset, limit) {
     for (let type of pokemon.types) {
       typeOfPokemon.push(type.type.name.capitalize());
     }
-    createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage, idOfPokemon);
+    await createCard("container-pokemons", imgOfPokemon, nameOfPokemon.capitalize(), orderOfPokemon, typeOfPokemon, favoritesPokemonLocalStorage, idOfPokemon);
   }
 }
